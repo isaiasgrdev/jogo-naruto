@@ -3,15 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo do Mario Bros</title>
+    <title>Jogo do Naruto</title>
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
-    <div id="game">
-        <div id="mario"></div>
-        <div id="obstacle"></div>
+    <div class="iniciar">
+        <p>Pressione qualquer tecla para iniciar o jogo...</p>
     </div>
-    <div id="score">Pontuacao: <span id="points" style="color: red;">0</span></div>
+
+    <div class="container">
+        <div id="game">
+            <div id="naruto"></div>
+            <div id="obstacle"></div>
+        </div>
+        <div id="score">Pontuacao: <span id="points" style="color: red;">0</span></div>
+
+        
+    </div>
+
+    <div class="game_over">
+        <h2>Game over!</h2>
+        <p class="msg_GameOver"></p>
+        <button>Reiniciar</button>
+    </div>
+    
     <script src="JS/script.js"></script>
 </body>
 </html>
