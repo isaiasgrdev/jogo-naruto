@@ -40,14 +40,18 @@ function gameLoop() {
             narutoRect.top < obstacleRect.bottom
         ) {
             fim_jogo();
-            // clearInterval(loopInterval); // Para o loop
-            // location.reload(); // Reinicia o jogo
+            const reiniciarBtn = document.querySelector('.reiniciarBtn')
+            reiniciarBtn.addEventListener('click', function reiniciar_game() {
+                clearInterval(loopInterval); // Para o loop
+                location.reload(); // Reinicia o jogo
+            })
         }
 
         // Incrementar pontuação e aumentar dificuldade
-        if (obstacleRect.right < 0) {
+        if (obstacleRect.left < 0) {
             points += 10;
-            pointsDisplay.textContent = `${points}`; // Atualiza a pontuação corretamente
+            console.log(`Pontos: ${points}`); // Verifica se os pontos estão sendo incrementados
+            pointsDisplay.textContent = `${points}`;
 
             if (points % 50 === 0) {
                 speed -= 0.2; // Aumenta a dificuldade
@@ -81,3 +85,5 @@ function fim_jogo() {
     iniciarMsg.style.display = 'none'; // Esconde a mensagem de iniciar
     container_jogo.style.display = 'none'; // Exibe o jogo
 }
+
+
